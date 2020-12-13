@@ -1,6 +1,7 @@
     * {
         margin: 0;
         padding: 0;
+        font-family: var(--font-family-main);
     }
 
     :root {
@@ -12,6 +13,7 @@
         --pale-pink: #edd9de;
         --dull-red: #aa4242;
         --rich-blue: #001dff;
+        --font-family-main: 'Roboto', sans-serif;
     }
 
     html {
@@ -125,6 +127,7 @@
     .highlight:hover {
         color: var(--dark-mauve);
         text-decoration: underline;
+        cursor: pointer;
     }
 
     .fas.fa-angle-double-down {
@@ -137,16 +140,18 @@
     }
 
     .display-an-example {
-        min-height: 100vh;
+        min-height: 150vh;
         width: 100%;
         background-image: url(../img/bg.png);
-        background-position: 25% 10%;
-        position: absolute;
+        background-position: -300px -40px;
+        background-repeat: no-repeat;
+        background-size: 148%;
     }
 
     .forground .title {
         margin-top: 20vh;
         margin-left: 5rem;
+        display: inline-block;
     }
 
     .forground h2 {
@@ -162,9 +167,10 @@
     .highlight.dark:hover {
         color: var(--pale-pink);
         text-decoration: underline;
+        cursor: pointer;
     }
 
-    h3 {
+    .highlight:hover h3 {
         font-size: 1.8rem;
         color: var(--dark-mauve);
         line-height: 3;
@@ -177,6 +183,7 @@
     .cards {
         display: flex;
         flex-direction: column;
+    
         margin: 3rem;
         width: 100%;
     }
@@ -193,7 +200,8 @@
         color: var(--clear-color);
         margin: 2rem 0;
     }
-    .card:hover{
+
+    .card:hover {
         background-color: var(--clear-color);
         color: var(--dark-mauve);
     }
@@ -210,9 +218,8 @@
 
     progress {
         display: block;
-        /* default: inline-block */
-        width: 90%;
-        margin: .5 rem 1rem;
+        width: 95%;
+        margin: auto;
         border: 0 none;
         background: var(--pinkish-tan);
         border-radius: 14px;
@@ -233,11 +240,14 @@
         flex-wrap: nowrap;
         margin: auto;
     }
-    .flex-hero aside{
+
+    .flex-hero aside {
         width: 25%;
         flex-basis: 25%;
+        margin-top: 5rem;
     }
-    .flex-hero aside button{
+
+    .flex-hero aside button {
         background-color: var(--pale-pink);
         color: var(--dark-mauve);
         border-radius: 20px;
@@ -245,66 +255,162 @@
         width: 100%;
         height: 5rem;
         box-shadow: none;
+        margin: 3rem auto;
+        box-sizing: border-box;
     }
-    .flex-hero aside button:hover{
+
+    .flex-hero aside button:hover {
         background-color: var(--dark-mauve);
         color: var(--soft-pink);
     }
-    
+
+    .flex-hero aside h3 {
+        margin: 3rem auto;
+        color: var(--dark-mauve);
+    }
+
     button {
-        display: inline-block;
-        border: none;
-        padding: 1rem 2rem;
-        margin: 0;
-        text-decoration: none;
-        background: #0069ed;
-        color: #ffffff;
-        font-family: sans-serif;
-        font-size: 1rem;
-        cursor: pointer;
+        margin: 0px 2rem;
+        background-color: var(--soft-pink);
+        color: var(--dark-mauve);
+        padding: 1.2rem;
+        border-radius: 7px;
+        transition: .6s;
         text-align: center;
-        transition: background 250ms ease-in-out, 
-                    transform 150ms ease;
+        transition: background 250ms ease-in-out, transform 150ms ease;
         -webkit-appearance: none;
         -moz-appearance: none;
     }
-    
-    button:hover,
-    button:focus {
-        background: #0053ba;
+    button:hover{
+        background-color: var(--dark-mauve);
+        color: var(--soft-pink);
     }
-    
-    button:focus {
-        outline: 1px solid #fff;
-        outline-offset: -4px;
-    }
-    
-    button:active {
-        transform: scale(0.99);
-    }
-    .number{
+
+    .number {
         display: block;
         width: 100%;
         text-align: center;
         font-size: 3rem;
         background-color: #fff;
-        padding: 1rem;
+        padding: 4rem 1rem;
         box-sizing: border-box;
         border-radius: 20px;
-        border: 3px solid var(--dark-mauve);
+        /* border: 3px solid var(--dark-mauve); */
         margin-bottom: 3rem;
     }
-    .social-links{
+
+    .number:hover {
+        border-radius: 7px;
+        transition: 1s;
+    }
+
+    .social-links {
+  
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: space-evenly;
-
         font-size: 5rem;
-
+        align-content: flex-end;
+        margin-TOP: -20px;
+    
     }
-    .social-links a{
+
+    .social-links a {
         color: var(--clear-color);
-        margin: 0 15px ;
+        margin: 0 15px;
     }
 
+    .audiance {
+        position: relative;
+        margin: 5vh 0;
+    }
+
+    .audiance-text {
+        width: 30%;
+        margin-left: 8%;
+        margin-bottom: 5%;
+    } 
+
+    .audiance-transition {
+        background-color: var(--pinkish-tan);
+        min-height: 170vh;
+        border-radius: 150px;
+        width: 135%;
+        position: relative;
+        transform: rotate(-15deg);
+        top: 15vh;
+        left: -8vw;
+        display: flex;
+        justify-content: flex-end;
+    
+    }
+
+    .audiance-transition .social-links {
+        width: 90%;
+        justify-content: flex-end;
+        margin-right: 10%;
+        margin-bottom: -8vh;
+        position: relative;
+
+        top: -6rem;
+    }
+
+    .audiance-transition .social-links .fab {
+        color: var(--rich-blue);
+    }
+    /* preview */
+.preview {
+    width: 90%;
+    height: 80vh;
+    background-color: #fff;
+    z-index: 999;
+    position: relative;
+    top: -120vh;
+    display: block;
+    margin: auto;
+    border: 4vh var(--dull-red) solid;
+}
+.preview header {
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+    align-items: center;
+}
+.preview header nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.preview header nav button {
+    flex-basis: 15%;
+}
+.preview header nav button:last-child{
+    margin-right: 5vw;
+}
+.preview .title{
+    margin-left: 3vw;
+    display: block;
+}
+.preview .cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    margin:5vh  auto;
+}
+.card.result{
+    border: 2px solid var(--pinkish-tan);
+    padding: 5vw;
+}
+.card.result .smiley{
+    margin: 3vh auto;
+    display: block;
+    width: 70%;
+}
+.card.result h5{
+    margin: 2vh auto;
+    font-size: 18px;
+}
